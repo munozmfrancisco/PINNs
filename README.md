@@ -60,7 +60,7 @@ where $\{ (x_i, t_i) \}_{i=1}^{a}$ are collocation points in $\Omega \times [0, 
 ### The Initial Conditions loss is then:
 
 $$
-\mathcal{L}_{IC} = \frac{1}{N_{IC}} \sum_{i=1}^{N_{IC}} \left| \hat{u}(x_i, 0; \theta) - u_0(x_i) \right|^2,
+L_{IC} = \frac{1}{N_{IC}} \sum_{i=1}^{N_{IC}} \left| \hat{u}(x_i, 0; \theta) - u_0(x_i) \right|^2,
 $$
 
 with $\{x_i\}_{i=1}^{N_{IC}} \subset \Omega$. 
@@ -68,7 +68,7 @@ with $\{x_i\}_{i=1}^{N_{IC}} \subset \Omega$.
 ### This Boundary Conditions the loss term:
 
 $$
-\mathcal{L}_{BC} = \frac{1}{N_{BC}} \sum_{i=1}^{N_{BC}} \left| \hat{u}(x_i, t_i; \theta) - g(x_i, t_i) \right|^2,
+L_{BC} = \frac{1}{N_{BC}} \sum_{i=1}^{N_{BC}} \left| \hat{u}(x_i, t_i; \theta) - g(x_i, t_i) \right|^2,
 $$
 
 where $\{ (x_i, t_i) \}_{i=1}^{N_{BC}} \subset \partial \Omega \times [0, T]$.
@@ -78,7 +78,7 @@ where $\{ (x_i, t_i) \}_{i=1}^{N_{BC}} \subset \partial \Omega \times [0, T]$.
 The combined loss to minimize is:
 
 $$
-\mathcal{L}(\theta, w) = w_{PDE} \mathcal{L}_{PDE} + w_{IC} \mathcal{L}_{IC} + w_{BC} \mathcal{L}_{BC},
+L(\theta, w) = w_{PDE} L_{PDE} + w_{IC} L_{IC} + w_{BC} L_{BC},
 $$
 
 where the $w's$ are weights balancing the terms.
@@ -90,13 +90,13 @@ where the $w's$ are weights balancing the terms.
 In inverse problems, unknown parameters or functions within the PDE are inferred by fitting the network not only to the physics but also to observed data points $ \{ (x_d^i, t_d^i, u_d^i) \}$. The data mismatch term is added to the loss:
 
 $$
-\mathcal{L}_{data} = \frac{1}{N_d} \sum_{i=1}^{N_d} \left| \hat{u}(x_d^i, t_d^i; \theta) - u_d^i \right|^2.
+L_{data} = \frac{1}{N_d} \sum_{i=1}^{N_d} \left| \hat{u}(x_d^i, t_d^i; \theta) - u_d^i \right|^2.
 $$
 
 The total loss for inverse problems becomes:
 
 $$
-\mathcal{L}(\theta, w) = w_{PDE} \mathcal{L}_{PDE} + w_{IC} \mathcal{L}_{IC} + w_{BC} \mathcal{L}_{BC} + w_{data} \mathcal{L}_{data}.
+L(\theta, w) = w_{PDE} L_{PDE} + w_{IC} L_{IC} + w_{BC} L_{BC} + w_{data} L_{data}.
 $$
 
 Training optimizes both the neural network parameters $\theta$ and the unknown physical parameters, allowing simultaneous solution and parameter identification.
