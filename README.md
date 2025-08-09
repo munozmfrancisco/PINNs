@@ -8,7 +8,9 @@ Physics-Informed Neural Networks (PINNs) are a class of deep learning models des
 
 Suppose we want to solve a nonlinear partial diferrential equation:
 
-$ u_{t} + \mathcal{N}[u; \lambda] = 0, \qquad x \in \Omega, \quad t \in [0, T], $
+\[
+u_{t} + \mathcal{N}[u; \lambda] = 0, \qquad x \in \Omega, \quad t \in [0, T], 
+\]
 
 where $u(x,t)$ denotes the solution, $\mathcal{N}[·; \lambda]$ is a nonlinear operator parameterized by $\lambda$ and $\Omega$ is a subset of $\mathbb{R}^D$.
 
