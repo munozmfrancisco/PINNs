@@ -88,7 +88,7 @@ $$
 L_{data} = \frac{1}{N_d} \sum_{i=1}^{N_d} \left| \hat{u}(x_d^i, t_d^i; \theta) - u_d^i \right|^2.
 $$
 
-The total loss for inverse problems becomes:
+### The total loss for inverse problems becomes:
 
 $$
 L(\theta, w) = w_{PDE} L_{PDE} + w_{IC} L_{IC} + w_{BC} L_{BC} + w_{data} L_{data}.
@@ -112,7 +112,12 @@ It includes:
 
 This modular design makes it easy to define the PINN architecture as a sequence of fully connected layers with chosen activation functions, while allowing automatic differentiation to enforce the physics constraints.
 
-The code also makes use of **NumPy**, **Matplotlib**, **datetime**, and **math** for numerical operations, visualization, time handling, and mathematical utilities.
+In addition to PyTorch, the following libraries are used:
+- **NumPy** — for efficient numerical operations and data handling.
+- **Matplotlib** — for visualization of results, including animations.
+- **datetime** — for handling timestamps in output files and logging.
+- **math** — for basic mathematical operations outside of PyTorch tensors.
+- **SciPy** — used in some examples to compute a high-accuracy *reference solution*, enabling comparison between the PINN prediction and the ground truth.
 
 The PINNs solve both **ordinary differential equations (ODEs)** and **partial differential equations (PDEs)** in forward and inverse problems.
 
@@ -126,8 +131,8 @@ The PINNs solve both **ordinary differential equations (ODEs)** and **partial di
   <em>Animation 1. Solution obtained by a PINN for the heat equation.</em>
 </p>
 
-As we can see in *Animation 1*, the PINN successfully solves the **heat equation** in a forward problem setting.  
-[Click here to view the animation in full size.](GIFs/Forward/heat.gif)
+As we can see in *Animation 1*, the PINN successfully solves the **heat equation** in a forward problem setting.
+[Click here to view the Jupyter Notebook.](PDEs/Forward/heat.ipynb)
 
 ---
 
