@@ -38,7 +38,7 @@ By encoding these constraints into the loss function, the network learns a solut
 
 ## Incorporation into the Loss Function
 
-The neural network predicts $ \hat{u}(x, t; \theta)$. Using automatic differentiation, the residual of the PDE is computed as:
+The neural network predicts $\hat{u}(x, t; \theta)$. Using automatic differentiation, the residual of the PDE is computed as:
 
 $$
 f(x, t) := \hat{u}_t + \mathcal{N}[\hat{u}; \lambda].
@@ -50,7 +50,7 @@ $$
 \mathcal{L}_{PDE} = \frac{1}{N_{PDE}} \sum_{i=1}^{N_{PDE}} \left| f(x_i, t_i) \right|^2,
 $$
 
-where $ \{ (x_i, t_i) \}_{i=1}^{N_{PDE}}$ are collocation points in $\Omega \times [0, T]$.
+where $\{ (x_i, t_i) \}_{i=1}^{N_{PDE}}$ are collocation points in $\Omega \times [0, T]$.
 
 ### The Initial Conditions loss is then:
 
