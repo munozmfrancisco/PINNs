@@ -55,7 +55,7 @@ L_{PDE} = \frac{1}{N_{PDE}} \sum_{i=1}^{N_{PDE}} \left| f(x_i, t_i) \right|^2,
 $$
 
 
-where $\{ (x_i, t_i) \}_{i=1}^{a}$ are collocation points in $\Omega \times [0, T]$.
+where ${(x_i, t_i)}_{i=1}^{N_{PDE}}$ are collocation points in $\Omega \times [0, T]$.
 
 ### The Initial Conditions loss is then:
 
@@ -63,12 +63,12 @@ $$
 L_{IC} = \frac{1}{N_{IC}} \sum_{i=1}^{N_{IC}} \left| \hat{u}(x_i, 0; \theta) - u_0(x_i) \right|^2,
 $$
 
-with $\{x_i\}_{i=1}^{N_{IC}} \subset \Omega$. 
+with ${x_i}_{i=1}^{N_{IC}} \subset \Omega$. 
 
 ### This Boundary Conditions the loss term:
 
 $$
-\mathbb{L}_{BC} = \frac{1}{N_{BC}} \sum_{i=1}^{N_{BC}} \left| \hat{u}(x_i, t_i; \theta) - g(x_i, t_i) \right|^2,
+L_{BC} = \frac{1}{N_{BC}} \sum_{i=1}^{N_{BC}} \left| \hat{u}(x_i, t_i; \theta) - g(x_i, t_i) \right|^2,
 $$
 
 where $\{ (x_i, t_i) \}_{i=1}^{N_{BC}} \subset \partial \Omega \times [0, T]$.
