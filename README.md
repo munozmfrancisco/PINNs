@@ -51,7 +51,7 @@ $$
 $$
 
 $$
-\mathcal{L}_{PDE} = \frac{1}{N_{PDE}} \sum_{i=1}^{N_{PDE}} \left| f(x_i, t_i) \right|^2,
+\mathcal{L}_{\text{PDE}} = \frac{1}{N_{\text{PDE}}} \sum_{i=1}^{N_{PDE}} \left| f(x_i, t_i) \right|^2,
 $$
 
 where $\{ (x_i, t_i) \}_{i=1}^{N_{PDE}}$ are collocation points in $\Omega \times [0, T]$.
