@@ -44,15 +44,19 @@ $$
 f(x, t) := \hat{u}_t + \mathcal{N}[\hat{u}; \lambda].
 $$
 
-### The PDE residual loss is then
+### The PDE residual loss is then:
 
 $$
-{\mathcal{L}}_{PDE} = \frac{1}{N_{PDE}} \sum_{i=1}^{N_{PDE}} | f(x_i, t_i)|^2,
+\mathcal{B}[u; \lambda] = g(x, t), \qquad \text{where } x \in \partial \Omega, \quad t \in [0, T],
+$$
+
+$$
+\mathcal{L}_{PDE} = \frac{1}{N_{PDE}} \sum_{i=1}^{N_{PDE}} \left| f(x_i, t_i) \right|^2,
 $$
 
 where $\{ (x_i, t_i) \}_{i=1}^{N_{PDE}}$ are collocation points in $\Omega \times [0, T]$.
 
-### The Initial Conditions loss is then
+### The Initial Conditions loss is then:
 
 $$
 \mathcal{L}_{IC} = \frac{1}{N_{IC}} \sum_{i=1}^{N_{IC}} \left| \hat{u}(x_i, 0; \theta) - u_0(x_i) \right|^2,
@@ -60,7 +64,7 @@ $$
 
 with $\{x_i\}_{i=1}^{N_{IC}} \subset \Omega$. 
 
-### This Boundary Conditions the loss term
+### This Boundary Conditions the loss term:
 
 $$
 \mathcal{L}_{BC} = \frac{1}{N_{BC}} \sum_{i=1}^{N_{BC}} \left| \hat{u}(x_i, t_i; \theta) - g(x_i, t_i) \right|^2,
