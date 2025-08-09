@@ -68,7 +68,7 @@ with $\{x_i\}_{i=1}^{N_{IC}} \subset \Omega$.
 ### This Boundary Conditions the loss term:
 
 $$
-L_{BC} = \frac{1}{N_{BC}} \sum_{i=1}^{N_{BC}} \left| \hat{u}(x_i, t_i; \theta) - g(x_i, t_i) \right|^2,
+\mathbb{L}_{BC} = \frac{1}{N_{BC}} \sum_{i=1}^{N_{BC}} \left| \hat{u}(x_i, t_i; \theta) - g(x_i, t_i) \right|^2,
 $$
 
 where $\{ (x_i, t_i) \}_{i=1}^{N_{BC}} \subset \partial \Omega \times [0, T]$.
@@ -81,13 +81,13 @@ $$
 L(\theta, w) = w_{PDE} L_{PDE} + w_{IC} L_{IC} + w_{BC} L_{BC},
 $$
 
-where the $w's$ are weights balancing the terms.
+where the $w$'s are weights balancing the terms.
 
 ---
 
 ## Handling Inverse Problems with Data
 
-In inverse problems, unknown parameters or functions within the PDE are inferred by fitting the network not only to the physics but also to observed data points $ \{ (x_d^i, t_d^i, u_d^i) \}$. The data mismatch term is added to the loss:
+In inverse problems, unknown parameters or functions within the PDE are inferred by fitting the network not only to the physics but also to observed data points $\{ (x_d^i, t_d^i, u_d^i) \}$. The data mismatch term is added to the loss:
 
 $$
 L_{data} = \frac{1}{N_d} \sum_{i=1}^{N_d} \left| \hat{u}(x_d^i, t_d^i; \theta) - u_d^i \right|^2.
