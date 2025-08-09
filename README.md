@@ -51,7 +51,7 @@ $$
 $$
 
 $$
-\mathcal{L}_{PDE} = \frac{1}{N_{PDE}} \sum_{i=1}^{N_{PDE}} \left| f(x_i, t_i) \right|^2,
+\mathcal{L}_PDE = \frac{1}{N_{PDE}} \sum_{i=1}^{N_{PDE}} \left| f(x_i, t_i) \right|^2,
 $$
 
 
