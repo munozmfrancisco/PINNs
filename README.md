@@ -47,26 +47,26 @@ $$
 ### The PDE residual loss is then:
 
 $$
-L_{PDE} = \frac{1}{N_{PDE}} \sum_{i=1}^{N_{PDE}} \left| f(x_i, t_i) \right|^2,
+L_{PDE} = \frac{1}{N_{PDE}} \sum_{i=1}^{N_{PDE}} \left| f(x^i, t^i) \right|^2,
 $$
 
-where $(x_i, t_i) \in \Omega \times [0, T]$.
+where $(x, t) \in \Omega \times [0, T]$.
 
 ### The Initial Conditions loss is then:
 
 $$
-L_{IC} = \frac{1}{N_{IC}} \sum_{i=1}^{N_{IC}} \left| \hat{u}(x_i, 0; \theta) - u_0(x_i) \right|^2,
+L_{IC} = \frac{1}{N_{IC}} \sum_{i=1}^{N_{IC}} \left| \hat{u}(x^i, 0; \theta) - u_0(x^i) \right|^2,
 $$
 
-with $x_i \in \Omega$. 
+with $x \in \Omega$. 
 
 ### The Boundary Conditions loss term is:
 
 $$
-L_{BC} = \frac{1}{N_{BC}} \sum_{i=1}^{N_{BC}} \left| \hat{u}(x_i, t_i; \theta) - g(x_i, t_i) \right|^2,
+L_{BC} = \frac{1}{N_{BC}} \sum_{i=1}^{N_{BC}} \left| \hat{u}(x^i, t^i; \theta) - g(x^i, t^i) \right|^2,
 $$
 
-where $(x_i, t_i) \in \partial \Omega \times [0, T]$.
+where $(x, t) \in \partial \Omega \times [0, T]$.
 
 ### Total Loss Function
 
@@ -100,20 +100,42 @@ Training optimizes both the neural network parameters $\theta$ and the unknown p
 
 ## Repository Structure
 
-This repository contains implementations of PINNs that solve ordinary differential equations (ODEs) and partial differential equations (PDEs) in forward and inverse problems.
+This repository contains Python implementations of Physics-Informed Neural Networks (PINNs) developed using **PyTorch**, specifically the `torch.nn` module.  
 
-- **GIFs/**: Visualizations and animations illustrating the solutions obtained by the time dependant PINNs.
-- **ODEs/**: Examples of ODEs solved using PINNs.
-- **PDEs/**: Examples of PDEs including the advection equation, heat equation, and shallow water equations.
+The `torch.nn` module provides the building blocks for defining and training neural networks in PyTorch.
+
+It includes:
+- **Layers** (e.g., `nn.Linear`, `nn.Conv2d`) for building network architectures.
+- **Activation functions** (e.g., `nn.ReLU`, `nn.Tanh`).
+- **Loss functions** (e.g., `nn.MSELoss`) for optimization.
+- Tools for creating **custom models** by subclassing `nn.Module`.
+
+This modular design makes it easy to define the PINN architecture as a sequence of fully connected layers with chosen activation functions, while allowing automatic differentiation to enforce the physics constraints.
+
+The code also makes use of **NumPy**, **Matplotlib**, **datetime**, and **math** for numerical operations, visualization, time handling, and mathematical utilities.
+
+The PINNs solve both **ordinary differential equations (ODEs)** and **partial differential equations (PDEs)** in forward and inverse problems.
+
+- **GIFs/** — Visualizations and animations illustrating the solutions obtained by the time-dependent PINNs.
+- **ODEs/** — Examples of ODEs solved using PINNs.
+- **PDEs/** — Examples of PDEs including the advection equation, heat equation, and shallow water equations.
 
 <p align="center">
-  <img src="GIFs/Forward/heat.gif" alt="PINN Solution" width="500"/>
+  <img src="GIFs/Forward/heat.gif" alt="PINN Solution for Heat Equation" width="500"/>
   <br>
-  <em>Figura 1. Solución obtenida por PINN para la ecuación de advección.</em>
+  <em>Animation 1. Solution obtained by a PINN for the heat equation.</em>
 </p>
+
+As we can see in *Animation 1*, the PINN successfully solves the **heat equation** in a forward problem setting.  
+[Click here to view the animation in full size.](GIFs/Forward/heat.gif)
+
+---
 
 ## Getting Started
 
-Dependencies installation
+### Dependencies Installation
 
-pip install numpy==1.19.2 scipy==1.5.3 matplotlib==3.3.2 torch==1.7.1+cu92 torchvision==0.8.2+cu92 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+You can install all required dependencies with:
+
+```bash
+pip install numpy==1.19.2 scipy==1.5.3 matplotlib==3.3.2 torch==1.7.1+cu92 torchvision==0.8.2+cu92 torchaudio==0.7.2
