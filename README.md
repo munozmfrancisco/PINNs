@@ -85,7 +85,7 @@ where the $w$'s are weights balancing the terms.
 
 ---
 
-## Handling Inverse Problems with Data
+## Inverse Problems
 
 In inverse problems, unknown parameters or functions within the PDE are inferred by fitting the network not only to the physics but also to observed data points $\{ (x_d^i, t_d^i, u_d^i) \}$. The data mismatch term is added to the loss:
 
