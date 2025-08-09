@@ -106,10 +106,11 @@ This repository contains implementations of PINNs that solve ordinary differenti
 - **ODEs/**: Examples of ODEs solved using PINNs.
 - **PDEs/**: Examples of PDEs including the advection equation, heat equation, and shallow water equations.
 
-![PINN Solution](GIFs/Forward/heat.gif)
-\begin{center}
-***Figura 1.*** *Solución obtenida por PINN para la ecuación de advección.*
-\end{center}
+<p align="center">
+  <img src="GIFs/Forward/heat.gif" alt="PINN Solution" width="500"/>
+  <br>
+  <em>Figura 1. Solución obtenida por PINN para la ecuación de advección.</em>
+</p>
 
 ## Getting Started
 
