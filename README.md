@@ -55,7 +55,7 @@ $$
 $$
 
 $$
-\mathcal{L}_t = \frac{1}{\text{N}_{PDE}} \sum_{i=1}^{N_{PDE}} \left| f(x_i, t_i) \right|^2,
+\frac{1}{N_{PDE}} \sum_{i=1}^{N_{PDE}} \left| f(x_i, t_i) \right|^2,
 $$
 
 
