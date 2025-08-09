@@ -1,6 +1,6 @@
 # Physics-Informed Neural Networks (PINNs) for Differential Equations
 
-Physics-Informed Neural Networks (PINNs) are a class of deep learning models designed to solve differential equations by incorporating physical laws directly into the training process. Instead of relying solely on data, PINNs leverage the underlying mathematical structure of the problem—such as ordinary differential equations (ODEs) and partial differential equations (PDEs)—to guide the learning, incorporating initial and boundary conditions within the loss function. This makes them particularly effective for solving both forward problems (predicting the system’s behavior) and inverse problems (estimating unknown parameters from observed data).
+Physics-Informed Neural Networks (PINNs) are a class of deep learning models designed to solve differential equations by incorporating physical laws directly into the training process. Instead of relying solely on data, PINNs leverage the underlying mathematical structure of the problem, including such as ordinary differential equations (ODEs) and partial differential equations (PDEs),to guide the learning, incorporating initial and boundary conditions within the loss function. This makes them particularly effective for solving both forward problems (predicting the system’s behavior) and inverse problems (estimating unknown parameters from observed data).
 
 ---
 
