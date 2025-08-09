@@ -1,6 +1,6 @@
 # Physics-Informed Neural Networks (PINNs) for Differential Equations
 
-Physics-Informed Neural Networks (PINNs) are a class of deep learning models designed to solve differential equations by incorporating physical laws directly into the training process. Instead of relying solely on data, PINNs leverage the underlying mathematical structure of the problem, including such as ordinary differential equations (ODEs) and partial differential equations (PDEs), to guide the learning, incorporating initial and boundary conditions within the loss function. This makes them particularly effective for solving both forward problems (predicting the system’s behavior) and inverse problems (estimating unknown parameters from observed data).
+Physics-Informed Neural Networks (PINNs) are a class of deep learning models designed to solve differential equations by incorporating physical laws directly into the training process. Instead of relying solely on data, PINNs leverage the underlying mathematical structure of the problem, including ordinary differential equations (ODEs) and partial differential equations (PDEs), to guide the learning, incorporating initial and boundary conditions within the loss function. This makes them particularly effective for solving both forward problems (predicting the system’s behavior) and inverse problems (estimating unknown parameters from observed data).
 
 ---
 
@@ -30,7 +30,7 @@ $\mathcal{B}[·;\lambda]$ corresponds to boundary operators such as Dirichlet, N
 
 The PINN approximates the solution $u(x,t)$ of the differential equation using a neural network $\hat{u}(x, t; \theta)$, where $\theta$ represents the network parameters. 
 
-The network is trained to satisfy, the governing differential equation (PDE), the Initial conditions (ICs), and the Boundary conditions (BCs).
+The network is trained to satisfy the governing differential equation (PDE), the Initial conditions (ICs), and the Boundary conditions (BCs).
 
 By encoding these constraints into the loss function, the network learns a solution consistent with both the physics and any available data.
 
@@ -47,13 +47,8 @@ $$
 ### The PDE residual loss is then:
 
 $$
-\mathcal{B}[u; \lambda] = g(x, t), \qquad \text{where } x \in \partial \Omega, \quad t \in [0, T],
-$$
-
-$$
 L_{PDE} = \frac{1}{N_{PDE}} \sum_{i=1}^{N_{PDE}} \left| f(x_i, t_i) \right|^2,
 $$
-
 
 where $(x_i, t_i) \in \Omega \times [0, T]$.
 
@@ -65,7 +60,7 @@ $$
 
 with $x_i \in \Omega$. 
 
-### This Boundary Conditions the loss term:
+### The Boundary Conditions loss term is:
 
 $$
 L_{BC} = \frac{1}{N_{BC}} \sum_{i=1}^{N_{BC}} \left| \hat{u}(x_i, t_i; \theta) - g(x_i, t_i) \right|^2,
@@ -105,14 +100,16 @@ Training optimizes both the neural network parameters $\theta$ and the unknown p
 
 ## Repository Structure
 
-This repository contains implementations of PINNs that solve ordinary differential equations (ODEs) and partial differential equations (PDEs) using both direct and inverse approaches.
+This repository contains implementations of PINNs that solve ordinary differential equations (ODEs) and partial differential equations (PDEs) in forward and inverse problems.
 
 - **GIFs/**: Visualizations and animations illustrating the solutions obtained by the time dependant PINNs.
 - **ODEs/**: Examples of ODEs solved using PINNs.
 - **PDEs/**: Examples of PDEs including the advection equation, heat equation, and shallow water equations.
 
+![PINN Solution](GIFs/Forward/heat.gif)
+
 ## Getting Started
 
-(Here you can add instructions for how to run the code, dependencies, etc.)
+Dependencies installation
 
-PyTorch installation
+pip install numpy==1.19.2 scipy==1.5.3 matplotlib==3.3.2 torch==1.7.1+cu92 torchvision==0.8.2+cu92 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
