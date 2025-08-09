@@ -6,7 +6,7 @@ Physics-Informed Neural Networks (PINNs) are a class of deep learning models des
 
 ## Mathematical Model
 
-Suppose we want to solve a nonlinear partial diferrential equation:
+Suppose we want to solve a nonlinear partial differential equation:
 
 $$
 u_{t} + \mathcal{N}[u; \lambda] = 0, \qquad \text{where } x \in \Omega, \quad t \in [0, T],
