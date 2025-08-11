@@ -122,8 +122,8 @@ In addition to PyTorch, the following libraries are used:
 
 The PINNs solve both **ordinary differential equations (ODEs)** and **partial differential equations (PDEs)** in forward and inverse problems.
 
-- **[GIFs](GIFs)/** — Visualizations and animations illustrating the solutions obtained by the time-dependent PINNs.
-- **[ODEs](ODEs)/** — Examples of ODEs solved using PINNs.
+- **[GIFs](GIFs)** — Visualizations and animations illustrating the solutions obtained by the time-dependent PINNs.
+- **[ODEs](ODEs)** — Examples of ODEs solved using PINNs.
 - **[PDEs](PDEs)** — Examples of PDEs including the advection equation, heat equation, and shallow water equations.
 
 <p align="center">
