@@ -106,7 +106,7 @@ The `torch.nn` module provides the building blocks for defining and training neu
 
 In this project, we use:
 - **Layers** — `nn.Linear` for fully connected layers forming the architecture of the PINN.
-- **Activation functions** — `nn.Tanh` and `nn.Sigmoid` for introducing non-linearity into the network.
+- **Activation functions** — (e.g. `nn.Tanh`,`nn.Sigmoid`) for introducing non-linearity into the network.
 - **Loss functions** — `nn.MSELoss` (mean squared error) to measure the difference between predicted and target values.
 - **Optimizers** — `torch.optim.Adam` for gradient-based optimization of the network parameters.
 - Support for creating **custom models** by subclassing `nn.Module`.
@@ -156,6 +156,10 @@ pip install numpy==1.26.0 scipy==1.5.3 matplotlib==3.8.0 torch==2.1.1
    *Physics Informed Deep Learning (Part II): Data-driven Discovery of Nonlinear Partial Differential Equations.*  
    arXiv:1711.10566. [https://arxiv.org/abs/1711.10566](https://arxiv.org/abs/1711.10566)
 
-3. Cuomo, S., Di Cola, V. S., Giampaolo, F., Rozza, G., Raissi, M., & Piccialli, F. (2020).  
-   *Scientific Machine Learning through Physics–Informed Neural Networks: Where we are and What's next.*  
-   arXiv:2012.10047. [https://arxiv.org/abs/2012.10047](https://arxiv.org/abs/2012.10047)
+3. Wang, S., Wang, H., & Perdikaris, P. (2020).  
+   *On the eigenvector bias of Fourier feature networks: From regression to solving multi-scale PDEs with physics-informed neural networks.*  
+   arXiv:2012.10047. https://arxiv.org/abs/2012.10047
+
+4. Jagtap, A. D., Kawaguchi, K., & Karniadakis, G. E. (2021).  
+   *Three Ways to Solve Partial Differential Equations with Neural Networks — A Review.*  
+   arXiv:2102.11802. https://arxiv.org/pdf/2102.11802
