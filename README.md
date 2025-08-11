@@ -132,7 +132,7 @@ The PINNs solve both **ordinary differential equations (ODEs)** and **partial di
   <em>Animation 1. Solution obtained by a PINN for the heat equation.</em>
 </p>
 
-As we can see in ***Animation 1***, the PINN successfully solves the **heat equation** in a forward problem setting. The resolution of this problem can be found at the following link: [Solution](PDEs/Forward/heat.ipynb)
+As we can see in ***Animation 1***, the PINN successfully solves the **heat equation** in a forward problem setting. The resolution of this problem can be found [here](PDEs/Forward/heat.ipynb).
 
 ---
 
