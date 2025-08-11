@@ -104,11 +104,12 @@ This repository contains Python implementations of Physics-Informed Neural Netwo
 
 The `torch.nn` module provides the building blocks for defining and training neural networks in PyTorch.
 
-It includes:
-- **Layers** (e.g., `nn.Linear`, `nn.Conv2d`) for building network architectures.
-- **Activation functions** (e.g., `nn.ReLU`, `nn.Tanh`).
-- **Loss functions** (e.g., `nn.MSELoss`) for optimization.
-- Tools for creating **custom models** by subclassing `nn.Module`.
+In this project, we use:
+- **Layers** — `nn.Linear` for fully connected layers forming the architecture of the PINN.
+- **Activation functions** — `nn.Tanh` and `nn.Sigmoid` for introducing non-linearity into the network.
+- **Loss functions** — `nn.MSELoss` (mean squared error) to measure the difference between predicted and target values.
+- **Optimizers** — `torch.optim.Adam` for gradient-based optimization of the network parameters.
+- Support for creating **custom models** by subclassing `nn.Module`.
 
 This modular design makes it easy to define the PINN architecture as a sequence of fully connected layers with chosen activation functions, while allowing automatic differentiation to enforce the physics constraints.
 
@@ -116,7 +117,7 @@ In addition to PyTorch, the following libraries are used:
 - **NumPy** — for efficient numerical operations and data handling.
 - **Matplotlib** — for visualization of results, including animations.
 - **datetime** — for handling timestamps in output files and logging.
-- **math** — for basic mathematical operations outside of PyTorch tensors.
+- **math** — for retrieving the values of mathematical constants and performing basic operations outside of PyTorch tensors.
 - **SciPy** — used in some examples to compute a high-accuracy *reference solution*, enabling comparison between the PINN prediction and the ground truth.
 
 The PINNs solve both **ordinary differential equations (ODEs)** and **partial differential equations (PDEs)** in forward and inverse problems.
@@ -131,8 +132,7 @@ The PINNs solve both **ordinary differential equations (ODEs)** and **partial di
   <em>Animation 1. Solution obtained by a PINN for the heat equation.</em>
 </p>
 
-As we can see in *Animation 1*, the PINN successfully solves the **heat equation** in a forward problem setting.
-[Click here to view the Jupyter Notebook.](PDEs/Forward/heat.ipynb)
+As we can see in ***Animation 1***, the PINN successfully solves the **heat equation** in a forward problem setting. The resolution of this problem can be found at the following link: [Solution](PDEs/Forward/heat.ipynb)
 
 ---
 
@@ -143,4 +143,19 @@ As we can see in *Animation 1*, the PINN successfully solves the **heat equation
 You can install all required dependencies with:
 
 ```bash
-pip install numpy==1.19.2 scipy==1.5.3 matplotlib==3.3.2 torch==1.7.1+cu92 torchvision==0.8.2+cu92 torchaudio==0.7.2
+pip install numpy==1.26.0 scipy==1.5.3 matplotlib==3.8.0 torch==2.1.1
+```
+
+## Bibliography
+
+1. Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2017).  
+   *Physics Informed Deep Learning (Part I): Data-driven Solutions of Nonlinear Partial Differential Equations.*  
+   arXiv:1711.10561. [http://arxiv.org/abs/1711.10561](http://arxiv.org/abs/1711.10561)
+
+2. Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2017).  
+   *Physics Informed Deep Learning (Part II): Data-driven Discovery of Nonlinear Partial Differential Equations.*  
+   arXiv:1711.10566. [https://arxiv.org/abs/1711.10566](https://arxiv.org/abs/1711.10566)
+
+3. Cuomo, S., Di Cola, V. S., Giampaolo, F., Rozza, G., Raissi, M., & Piccialli, F. (2020).  
+   *Scientific Machine Learning through Physics–Informed Neural Networks: Where we are and What's next.*  
+   arXiv:2012.10047. [https://arxiv.org/abs/2012.10047](https://arxiv.org/abs/2012.10047)
