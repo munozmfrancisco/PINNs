@@ -116,7 +116,7 @@ This modular design makes it easy to define the PINN architecture as a sequence 
 In addition to PyTorch, the following libraries are used:
 - **NumPy** — for efficient numerical operations and data handling.
 - **Matplotlib** — for visualization of results, including animations.
-- **datetime** — for handling timestamps in output files and logging.
+- **time** — for handling timestamps in output files and logging.
 - **math** — for retrieving the values of mathematical constants and performing basic operations outside of PyTorch tensors.
 - **SciPy** — used in some examples to compute a high-accuracy *reference solution*, enabling comparison between the PINN prediction and the ground truth.
 
