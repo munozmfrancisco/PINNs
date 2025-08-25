@@ -165,5 +165,5 @@ pip install numpy==1.26.0 scipy==1.5.3 matplotlib==3.8.0 torch==2.1.1
    arXiv:2102.11802. https://arxiv.org/pdf/2102.11802
 
 5. Wang, H., Lu, L., Song, S., & Huang, G. (2023). 
-   *Learning Specialized Activation Functions for Physics-Informed Neural Networks*. 
+   *Learning Specialized Activation Functions for Physics-Informed Neural Networks.*
    arXiv:2308.04073. https://arxiv.org/abs/2308.04073
